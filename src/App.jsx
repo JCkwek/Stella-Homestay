@@ -17,11 +17,11 @@ function App() {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Navigation Bar */}
-      <nav className="relative flex items-center justify-between p-4 bg-white shadow-md">
+      <nav className="relative flex items-center justify-between p-4 bg-gray-900 shadow-md">
         <Link 
           to="/" 
           onClick={closeMenu} 
-          className="text-xl font-bold text-black transition-colors duration-200 hover:text-pink-600 active:text-pink-600"
+          className="text-xl font-bold text-white transition-colors duration-200 hover:text-pink-600 active:text-pink-600"
         >
           StellaHomestay
         </Link>
@@ -46,15 +46,13 @@ function App() {
         <button
           onClick={toggleMenu}
           aria-label="Toggle menu"
-          className="p-2 text-black transition-colors duration-200 md:hidden hover:text-pink-600 focus:outline-none"
+          className="p-2 text-white transition-colors duration-200 md:hidden hover:text-pink-600 focus:outline-none"
         >
           {isMenuOpen ? (
-            /* Close Icon (X) */
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           ) : (
-            /* Hamburger Icon */
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -101,7 +99,7 @@ function App() {
             onClick={closeMenu}
             className="text-lg font-medium text-black transition-colors duration-200 hover:text-pink-600 active:text-pink-600"
           >
-            About
+            House Rules
           </Link>
         </div>
       </div>
