@@ -30,13 +30,13 @@ function App() {
         <div className="hidden md:flex md:items-center md:gap-6">
           <Link 
             to="/" 
-            className="font-medium text-black transition-colors duration-200 hover:text-pink-600 active:text-pink-600"
+            className="font-medium text-white transition-colors duration-200 hover:text-pink-600 active:text-pink-600"
           >
             Home
           </Link>
           <Link 
             to="/about" 
-            className="font-medium text-black transition-colors duration-200 hover:text-pink-600 active:text-pink-600"
+            className="font-medium text-white transition-colors duration-200 hover:text-pink-600 active:text-pink-600"
           >
             About
           </Link>
