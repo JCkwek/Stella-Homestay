@@ -3,6 +3,7 @@ import './App.css'
 import { Routes, Route, Link } from 'react-router-dom'
 
 import Home from './pages/Home'
+import Gallery from './pages/Gallery'
 
 function About() {
   return <div className="p-8 text-2xl font-bold text-pink-600">About Page</div>
@@ -108,6 +109,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
     </div>
   )

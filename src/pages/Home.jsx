@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"; 
+
 export default function Home() {
   return (
     <div className="w-full">
@@ -29,6 +31,7 @@ export default function Home() {
             </ul>
         </div>
 
+        <Link to="/gallery" className="block group">
         <div className="relative h-32 md:h-56 p-4 rounded-xl shadow-lg overflow-hidden flex flex-col justify-end">
             <img
               src="/assets/images/gallery.webp"
@@ -42,6 +45,7 @@ export default function Home() {
               Gallery
             </h2>
         </div>
+        </Link>
 
         <div className="relative h-32 md:h-56 p-4 rounded-xl shadow-lg overflow-hidden flex flex-col justify-end">
             <img
