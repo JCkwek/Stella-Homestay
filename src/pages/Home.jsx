@@ -22,23 +22,49 @@ export default function Home() {
 
       {/* Main Content Container (Add your quick access cards here) */}
       <div className="max-w-4xl mx-auto p-6 space-y-6 flex flex-col gap-4">
-        <div className="border-b border-gray-200 p-4">
+        <div className="border-b border-gray-400 p-4">
             <ul className="list-disc pl-5 space-y-1 text-gray-700">
                 <li>3 bed rooms</li>
                 <li>3 bed rooms</li>
             </ul>
         </div>
 
-        <div className="p-4 h-32 md:h-56 rounded-xl bg-white shadow-lg ">
-            <h2>Gallery</h2>
+        <div className="relative h-32 md:h-56 p-4 rounded-xl shadow-lg overflow-hidden flex flex-col justify-end">
+            <img
+              src="/assets/images/gallery.webp"
+              alt="Gallery"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Background overlay*/}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+            {/* Title */}
+            <h2 className="relative z-10 text-xl font-bold text-white drop-shadow-md">
+              Gallery
+            </h2>
         </div>
 
-        <div className="p-4 h-32 md:h-56 rounded-xl bg-white shadow-lg ">
-            <h2>Facilties and Services</h2>
+        <div className="relative h-32 md:h-56 p-4 rounded-xl shadow-lg overflow-hidden flex flex-col justify-end">
+            <img
+              src="/assets/images/facilities.webp"
+              alt="Gallery"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+            <h2 className="relative z-10 text-xl font-bold text-white drop-shadow-md">
+              Services & Facilities
+            </h2>
         </div>
 
-        <div className="p-4 h-32 md:h-56 rounded-xl bg-white shadow-lg ">
-            <h2>Location</h2>
+        <div className="relative h-32 md:h-56 p-4 rounded-xl shadow-lg overflow-hidden flex flex-col justify-end">
+            <img
+              src="/assets/images/checkin.webp"
+              alt="Gallery"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+            <h2 className="relative z-10 text-xl font-bold text-white drop-shadow-md">
+              Check-in & Check-out Procedure
+            </h2>
         </div>
 
       </div>
