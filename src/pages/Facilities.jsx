@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function ServiceFacilities() {
+export default function Facilities() {
   // Group your images/facilities by category sections
   const facilitySections = [
     {

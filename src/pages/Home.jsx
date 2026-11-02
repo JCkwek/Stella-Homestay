@@ -47,7 +47,7 @@ export default function Home() {
           </div>
         </Link>
 
-        <Link to="/services-facilities" className="block group">
+        <Link to="/facilities" className="block group">
           <div className="relative h-32 md:h-56 p-4 rounded-xl shadow-lg overflow-hidden flex flex-col justify-end">
             <img
               src="/assets/images/facilities.webp"
@@ -56,7 +56,7 @@ export default function Home() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
             <h2 className="relative z-10 text-xl font-bold text-white drop-shadow-md">
-              Services & Facilities
+              Facilities
             </h2>
           </div>
         </Link>
