@@ -52,9 +52,7 @@ export default function Facilities() {
 
       {/* Page Title */}
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">
-          Services & Facilities
-        </h1>
+        <h1 className="text-3xl font-bold text-gray-900">Facilities</h1>
         <p className="mt-2 text-gray-600">
           Explore the amenities and convenient location features available at TR
           Residence.
