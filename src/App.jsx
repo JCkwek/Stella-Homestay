@@ -5,6 +5,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import Facilities from "./pages/Facilities";
+import CheckInOut from "./pages/CheckInOut";
 
 function About() {
   return <div className="p-8 text-2xl font-bold text-pink-600">About Page</div>;
@@ -146,6 +147,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/facilities" element={<Facilities />} />
+        <Route path="/check-in-out" element={<CheckInOut />} />
       </Routes>
     </div>
   );
