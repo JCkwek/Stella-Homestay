@@ -24,7 +24,11 @@ function App() {
           onClick={closeMenu} 
           className="text-xl font-bold text-white transition-colors duration-200 hover:text-pink-600 active:text-pink-600"
         >
-          StellaHomestay
+          <img
+            src="/assets/images/logowhite.png"
+            alt="TR Residence"
+            className="h-12 md:h-18 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Links */}
