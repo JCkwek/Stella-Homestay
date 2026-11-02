@@ -4,7 +4,7 @@ import { Routes, Route, Link } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
-import ServiceFacilities from "./pages/ServiceFacilities";
+import Facilities from "./pages/Facilities";
 
 function About() {
   return <div className="p-8 text-2xl font-bold text-pink-600">About Page</div>;
@@ -145,7 +145,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/services-facilities" element={<ServiceFacilities />} />
+        <Route path="/facilities" element={<Facilities />} />
       </Routes>
     </div>
   );
