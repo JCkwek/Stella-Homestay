@@ -136,7 +136,7 @@ function App() {
             onClick={closeMenu}
             className="text-lg font-medium text-black transition-colors duration-200 hover:text-pink-600 active:text-pink-600"
           >
-            House Rules
+            Language
           </Link>
         </div>
       </div>
