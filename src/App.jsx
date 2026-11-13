@@ -29,13 +29,7 @@ function App() {
 
         {/* Desktop Links and language*/}
         <div className="hidden md:flex md:items-center md:gap-6">
-          <Link
-            to="/"
-            className="font-medium text-white transition-colors duration-200 hover:text-pink-600 active:text-pink-600"
-          >
-            {lang === "en" ? "Home" : "首页"}
-          </Link>
-
+          {/*language switcher */}
           <div className="flex items-center bg-gray-800 p-1 rounded-full text-sm font-medium border border-gray-700">
             <button
               onClick={() => setLang("en")}
