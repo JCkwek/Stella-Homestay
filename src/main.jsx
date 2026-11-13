@@ -6,11 +6,13 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
 import { LanguageProvider } from "./context/LanguageProvider.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <LanguageProvider>
+        <ScrollToTop />
         <App />
       </LanguageProvider>
     </BrowserRouter>
