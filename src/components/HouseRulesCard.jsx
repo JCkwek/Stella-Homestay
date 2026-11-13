@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLanguage } from "../hooks/useLanguage";
 import {
   FaShoePrints,
   FaSmokingBan,
@@ -85,6 +86,7 @@ const HOUSE_RULES = [
 ];
 
 export default function HouseRulesCard({ initialCount = 4 }) {
+  const { lang } = useLanguage();
   const [isExpanded, setIsExpanded] = useState(false);
   const visibleRules = isExpanded
     ? HOUSE_RULES
@@ -94,7 +96,7 @@ export default function HouseRulesCard({ initialCount = 4 }) {
   return (
     <div className="bg-white rounded-2xl shadow-md border border-gray-100 p-5 space-y-4">
       <h2 className="text-lg font-bold text-gray-800 border-b border-gray-100 pb-3">
-        House Rules
+        {lang === "en" ? "House Rules" : "房屋守则"}
       </h2>
 
       <ul className="space-y-3.5">
@@ -104,8 +106,9 @@ export default function HouseRulesCard({ initialCount = 4 }) {
             <li key={index} className="flex items-start gap-3">
               <Icon className={`${rule.color} mt-1 shrink-0 text-base`} />
               <div className="text-sm leading-snug">
-                <p className="font-medium text-gray-800">{rule.en}</p>
-                <p className="text-gray-500 text-xs mt-0.5">{rule.zh}</p>
+                <p className="font-medium text-gray-800">
+                  {lang === "en" ? rule.en : rule.zh}
+                </p>
               </div>
             </li>
           );
@@ -120,11 +123,14 @@ export default function HouseRulesCard({ initialCount = 4 }) {
         >
           {isExpanded ? (
             <>
-              View Less <FaChevronUp className="text-xs" />
+              {lang === "en" ? "View Less" : "收起"}{" "}
+              <FaChevronUp className="text-xs" />
             </>
           ) : (
             <>
-              View More ({remainingCount} more){" "}
+              {lang === "en"
+                ? `View More (${remainingCount} more)`
+                : `查看更多（还有 ${remainingCount} 条）`}{" "}
               <FaChevronDown className="text-xs" />
             </>
           )}
