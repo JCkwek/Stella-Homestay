@@ -27,7 +27,7 @@ export default function Home() {
         <div className="border-b border-gray-400 p-4">
           <ul className="list-disc pl-5 space-y-1 text-gray-700">
             <li>3 bed rooms</li>
-            <li>2 bathroomss</li>
+            <li>2 bathrooms</li>
           </ul>
         </div>
 
