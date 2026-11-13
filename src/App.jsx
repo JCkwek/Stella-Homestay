@@ -1,19 +1,17 @@
 import { useState } from "react";
 import "./App.css";
 import { Routes, Route, Link } from "react-router-dom";
+import { useLanguage } from "./hooks/useLanguage";
+import Sidebar from "./components/Sidebar";
 
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import Facilities from "./pages/Facilities";
 import CheckInOut from "./pages/CheckInOut";
 
-function About() {
-  return <div className="p-8 text-2xl font-bold text-pink-600">About Page</div>;
-}
-
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const { lang, setLang } = useLanguage();
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -21,11 +19,7 @@ function App() {
     <div className="min-h-screen bg-slate-50">
       {/* Navigation Bar */}
       <nav className="relative flex items-center justify-between p-4 bg-gray-900 shadow-md">
-        <Link
-          to="/"
-          onClick={closeMenu}
-          className="text-xl font-bold text-white transition-colors duration-200 hover:text-pink-600 active:text-pink-600"
-        >
+        <Link to="/" onClick={closeMenu} className="flex items-center">
           <img
             src="/assets/images/logowhite.png"
             alt="TR Residence"
@@ -33,20 +27,37 @@ function App() {
           />
         </Link>
 
-        {/* Desktop Links */}
+        {/* Desktop Links and language*/}
         <div className="hidden md:flex md:items-center md:gap-6">
           <Link
             to="/"
             className="font-medium text-white transition-colors duration-200 hover:text-pink-600 active:text-pink-600"
           >
-            Home
+            {lang === "en" ? "Home" : "首页"}
           </Link>
-          <Link
-            to="/about"
-            className="font-medium text-white transition-colors duration-200 hover:text-pink-600 active:text-pink-600"
-          >
-            About
-          </Link>
+
+          <div className="flex items-center bg-gray-800 p-1 rounded-full text-sm font-medium border border-gray-700">
+            <button
+              onClick={() => setLang("en")}
+              className={`px-3 py-1 rounded-full transition-all ${
+                lang === "en"
+                  ? "bg-pink-600 text-white shadow-sm"
+                  : "text-gray-400 hover:text-white"
+              }`}
+            >
+              EN
+            </button>
+            <button
+              onClick={() => setLang("zh")}
+              className={`px-3 py-1 rounded-full transition-all ${
+                lang === "zh"
+                  ? "bg-pink-600 text-white shadow-sm"
+                  : "text-gray-400 hover:text-white"
+              }`}
+            >
+              中
+            </button>
+          </div>
         </div>
 
         {/* Menu side Button */}
@@ -55,96 +66,27 @@ function App() {
           aria-label="Toggle menu"
           className="p-2 text-white transition-colors duration-200 md:hidden hover:text-pink-600 focus:outline-none"
         >
-          {isMenuOpen ? (
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          )}
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
         </button>
       </nav>
 
-      {/* Backdrop for Mobile Sidebar */}
-      {isMenuOpen && (
-        <div
-          onClick={closeMenu}
-          className="fixed inset-0 z-40 bg-black/50 md:hidden"
-        />
-      )}
-
-      {/* Mobile Slide-out Drawer (Appears from the right) */}
-      <div
-        className={`fixed top-0 right-0 z-50 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:hidden ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="flex items-center justify-between p-4 border-b">
-          <span className="font-bold text-black">Menu</span>
-          <button
-            onClick={closeMenu}
-            className="p-1 text-black hover:text-pink-600"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
-
-        <div className="flex flex-col gap-4 p-6">
-          <Link
-            to="/"
-            onClick={closeMenu}
-            className="text-lg font-medium text-black transition-colors duration-200 hover:text-pink-600 active:text-pink-600"
-          >
-            Home
-          </Link>
-          <Link
-            to="/about"
-            onClick={closeMenu}
-            className="text-lg font-medium text-black transition-colors duration-200 hover:text-pink-600 active:text-pink-600"
-          >
-            Language
-          </Link>
-        </div>
-      </div>
+      <Sidebar isOpen={isMenuOpen} onClose={closeMenu} />
 
       {/* Route Views */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/facilities" element={<Facilities />} />
         <Route path="/check-in-out" element={<CheckInOut />} />
