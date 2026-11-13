@@ -1,4 +1,5 @@
 import HouseItemCard from "../components/HouseItemCard";
+import HouseRulesCard from "../components/HouseRulesCard";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
         </div>
 
         {/*House rules */}
+        <HouseRulesCard initialCount={4} />
 
         {/*House gallery, facilities, checkin */}
         <HouseItemCard
